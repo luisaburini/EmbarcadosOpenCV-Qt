@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+    </qresource>
+    <qresource prefix="/haarscascades">
+        <file>haarcascade_frontalface_alt.xml</file>
+    </qresource>
+</RCC>
