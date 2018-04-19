@@ -14,7 +14,7 @@ Este código demonstra a inserção do OpenCV em uma aplicação de Qt através 
 /usr/bin/appcontroller /opt/EmbarcadosOpenCV-Qt/bin/EmbarcadosOpenCV-Qt
 </code>
 
-** Na aplicação, é possível tirar uma foto ao apertar o botão, logo em seguida, as faces frontais são circuladas na imagem. 
+* Na aplicação, é possível tirar uma foto ao apertar o botão, logo em seguida, as faces frontais são circuladas na imagem. 
 Ao clicar na imagem com as faces circuladas, retorna ao modo de captura.
 
 ![alt text](demo.gif)

@@ -28,7 +28,12 @@ void FaceDetect::processImage(const QString &source, const QString &dest){
 
     vector<Rect> faces;
 
-    faceCascade.detectMultiScale(gray, faces, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(30,30));
+    faceCascade.detectMultiScale(gray, // grayscale image
+                                 faces, // rect vector of detected objects
+                                 1.1, // scale factor
+                                 3, // minimum number of neighbors
+                                 0 | CASCADE_SCALE_IMAGE, // flags
+                                 Size(30,30)); // minimum size of detected object
 
     for(int i=0; i<faces.size(); i++){
         Rect r = faces[i];
