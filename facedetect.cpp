@@ -8,9 +8,8 @@ FaceDetect::FaceDetect(QObject *parent) : QObject(parent)
 void FaceDetect::processImage(const QString &source, const QString &dest){
     Mat src, gray;
 
-    QString mySource = source;
 
-    string myConvertedSrc = mySource.remove(QRegExp("(file:/)")).toStdString();
+    string myConvertedSrc = source.toStdString();
 
 
     src = imread(myConvertedSrc,CV_LOAD_IMAGE_COLOR);
@@ -47,13 +46,10 @@ void FaceDetect::processImage(const QString &source, const QString &dest){
             center.y = cvRound(r.y + r.height*0.5);
             radius = cvRound((r.width + r.height)*0.25);
             circle(src, center, radius, Scalar(255, 0, 0), 3, 8, 0);
-            qDebug() << "TINY FACE ASPECT RATIO OF FACES IS " + QString::number(center.x) + " " + QString::number(center.y);
 
         } else{
             rectangle(src, cvPoint(cvRound(r.x), cvRound(r.y)),
                       cvPoint(cvRound(r.x+r.width), cvRound(r.y+r.height)), Scalar(255, 0, 0), 3, 8, 0);
-
-            qDebug() << "HUGE FACE ASPECT RATIO OF FACES IS "  + QString::number(r.width) + " " + QString::number(r.height);
         }
     }
 
