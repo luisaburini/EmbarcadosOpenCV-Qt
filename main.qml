@@ -26,6 +26,7 @@ Window {
         id: videoOutput
         source: camera
         visible: imagem.state == "CaptureMode"
+        anchors.centerIn: parent
         RoundButton{
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 20
@@ -44,6 +45,7 @@ Window {
         anchors.fill: parent
         state: "CaptureMode"
         visible: imagem.state == "PhotoPreview"
+        fillMode: Image.PreserveAspectFit
         states: [
             State{
                 name: "CaptureMode"
